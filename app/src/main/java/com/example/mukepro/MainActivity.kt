@@ -15,6 +15,14 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.open_log_page).setOnClickListener {
             startActivity(Intent(this,LogActivity::class.java))
         }
+
+        findViewById<Button>(R.id.open_bottom_tab_page).setOnClickListener {
+            startActivity(Intent(this,BottomTabActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.open_top_tab_page).setOnClickListener {
+            startActivity(Intent(this,TopTabActivity::class.java))
+        }
     }
 
 }
