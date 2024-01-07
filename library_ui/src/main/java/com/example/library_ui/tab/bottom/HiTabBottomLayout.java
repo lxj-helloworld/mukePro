@@ -56,7 +56,6 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
     }
 
 
-
     @Override
     public HiTabBottom findTab(@NonNull HiTabBottomInfo<?> data) {
         ViewGroup ll = findViewWithTag(TAG_TAB_BOTTOM);
@@ -84,7 +83,7 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
 
     @Override
     public void inflateInfo(@NonNull List<HiTabBottomInfo<?>> infoList) {
-        if(infoList.isEmpty()){
+        if (infoList.isEmpty()) {
             return;
         }
         this.infoList = infoList;
@@ -141,8 +140,8 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
      * Author ： lxj
      * Time ： 2024/1/7 09:12
      * Describe：  item选中
-    **/
-    private void onSelected( HiTabBottomInfo<?> nextInfo) {
+     **/
+    private void onSelected(HiTabBottomInfo<?> nextInfo) {
         for (OnTabSelectedListener<HiTabBottomInfo<?>> listener : tabSelectedChangeListeners) {
             listener.onTabSelectedChange(infoList.indexOf(nextInfo), selectedInfo, nextInfo);
         }
@@ -177,7 +176,7 @@ public class HiTabBottomLayout extends FrameLayout implements IHiTabLayout<HiTab
      * Author ： lxj
      * Time ： 2024/1/7 09:14
      * Describe：  修复内容区域的底部Padding
-    **/
+     **/
     private void fixContentView() {
         if (!(getChildAt(0) instanceof ViewGroup)) {
             return;
