@@ -75,11 +75,11 @@ public class HiLog {
     }
 
     public static void log(@HiLogType.TYPE int type, Object... contents) {
-        log(type, HiLohManager.getInstance().getHiLogConfig().getGlobalTag(), contents);
+        log(type, HiLogManager.getInstance().getHiLogConfig().getGlobalTag(), contents);
     }
 
     public static void log(@HiLogType.TYPE int type, @NotNull String tag, Object... contents) {
-        log(HiLohManager.getInstance().getHiLogConfig(), type, tag, contents);
+        log(HiLogManager.getInstance().getHiLogConfig(), type, tag, contents);
     }
 
     public static void log(@NotNull HiLogConfig config, @HiLogType.TYPE int type, @NotNull String tag, Object... contents) {
@@ -100,7 +100,7 @@ public class HiLog {
         String body = parseBody(contents, config);
         stringBuffer.append(body);
 
-        List<HiLogPrinter> printers = config.printers() != null ? Arrays.asList(config.printers()) : HiLohManager.getInstance().getPrinterList();
+        List<HiLogPrinter> printers = config.printers() != null ? Arrays.asList(config.printers()) : HiLogManager.getInstance().getPrinterList();
         if (printers != null) {
             for (HiLogPrinter printer : printers) {
                 printer.print(config, type, tag, stringBuffer.toString());

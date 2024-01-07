@@ -11,23 +11,23 @@ import java.util.List;
  * 创建人 xiaojinli
  * 创建时间 2023/12/23 20:25
  **/
-public class HiLohManager {
+public class HiLogManager {
     private HiLogConfig hiLogConfig;
-    private static HiLohManager instance;
+    private static HiLogManager instance;
 
     private List<HiLogPrinter> printerList = new ArrayList<>();
 
-    public HiLohManager(HiLogConfig config, HiLogPrinter[] printers) {
+    public HiLogManager(HiLogConfig config, HiLogPrinter[] printers) {
         this.hiLogConfig = config;
         this.printerList.addAll(Arrays.asList(printers));
     }
 
-    public static HiLohManager getInstance() {
+    public static HiLogManager getInstance() {
         return instance;
     }
 
     public static void init(@NotNull HiLogConfig config, HiLogPrinter... printers) {
-        instance = new HiLohManager(config, printers);
+        instance = new HiLogManager(config, printers);
     }
 
     public HiLogConfig getHiLogConfig() {

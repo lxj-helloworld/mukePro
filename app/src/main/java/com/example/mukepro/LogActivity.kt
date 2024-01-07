@@ -6,7 +6,7 @@ import android.widget.Button
 import com.example.log_library.log.HiLog
 import com.example.log_library.log.HiLogConfig
 import com.example.log_library.log.HiLogType
-import com.example.log_library.log.HiLohManager
+import com.example.log_library.log.HiLogManager
 import com.example.log_library.log.HiViewPrinter
 
 class LogActivity : AppCompatActivity() {
@@ -19,7 +19,7 @@ class LogActivity : AppCompatActivity() {
         viewPrinter?.viewPrinterProvider!!.showFloatingView()
         findViewById<Button>(R.id.print_log).setOnClickListener {
 
-            HiLohManager.getInstance().addPrinters(viewPrinter)
+            HiLogManager.getInstance().addPrinters(viewPrinter)
 
             HiLog.log(object : HiLogConfig(){
                 override fun includeThread(): Boolean {

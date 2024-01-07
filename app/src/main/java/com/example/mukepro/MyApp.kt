@@ -3,8 +3,7 @@ package com.example.mukepro
 import android.app.Application
 import com.example.log_library.log.HiConsolePrinter
 import com.example.log_library.log.HiLogConfig
-import com.example.log_library.log.HiLogPrinter
-import com.example.log_library.log.HiLohManager
+import com.example.log_library.log.HiLogManager
 import com.google.gson.Gson
 
 /**
@@ -16,7 +15,7 @@ import com.google.gson.Gson
 public class MyApp : Application() {
     override fun onCreate() {
         super.onCreate()
-        HiLohManager.init(object : HiLogConfig() {
+        HiLogManager.init(object : HiLogConfig() {
 
             override fun injectJsonParser(): JsonParser {
                 return JsonParser { src -> Gson().toJson(src) }

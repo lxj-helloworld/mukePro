@@ -16,3 +16,4 @@ rootProject.name = "mukePro"
 include ':app'
 include ':library_log'
 include ':library_ui'
+include ':library_common'
